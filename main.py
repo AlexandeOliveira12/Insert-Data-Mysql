@@ -2,7 +2,7 @@ import mysql.connector
 from tkinter import *
 from decouple import config
 
-def inserir():
+def InserirDados():
     myconnection = mysql.connector.connect(host=config("localhost"), user='root', password=config("password"), database=config("database"))
 
     i = int(idade.get())
@@ -20,25 +20,25 @@ def inserir():
     if myconnection.is_connected(): 
         cursor.close()
         myconnection.close()
-        print("Conexao ao MySql foi encerrada")
-        
+        print("Conexao ao MySql foi encerrada")      
         
 janela = Tk()
-janela.title("query tools")
+janela.geometry("240x150")
+janela.title("Login")
 
 Nome1 = Label(janela, text="insira seu nome aqui aqui: ")
 Nome1.grid(column=0, row=0)
 
-Nome = Entry(janela, width=50)
+Nome = Entry(janela, width=40)
 Nome.grid(column=0, row=1)
 
-idade1 = Label(janela, text="insira sua idade aqui:")
+idade1 = Label(janela, text="\ninsira sua idade aqui:")
 idade1.grid(column=0, row=2)
 
-idade = Entry(janela, width=50)
+idade = Entry(janela, width=40)
 idade.grid(column=0, row=3)
 
-botao = Button(janela, text="Inserir dados", command=inserir)
+botao = Button(janela, text="Inserir dados", command=lambda:[InserirDados()])
 botao.grid(column=0, row=4)
 
 janela.mainloop()        
