@@ -19,7 +19,7 @@ Tkinter;
 
 # Política de segurança
 
-VERSÃO=2,0
+VERSÃO=2,0 - 
 DB COMPATÍVEL = MYSQL
 
 ## Como relatar uma 
@@ -33,9 +33,6 @@ falhas serão comuns, para relatar uma vulnerabilidade faça um pull request
 # INSERTING RECORDS USING GRAPHIC INTERFACE
 
 ## INSERT RECORDS INTO MYSQL DATABASE USING GRAPHIC INTERFACE WITH TKINTER LIB
-
-VERSION=2.0
-COMPATIBLE DB's = MYSQL
 
 To download the repository write in the terminal(cmd):
 ````
@@ -54,7 +51,7 @@ Tkinter;
 
 # Security policy
 
-VERSION=2.0
+VERSION=2.0 - 
 DB COMPATIBLE = MYSQL
 
 ## How to report a
