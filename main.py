@@ -1,5 +1,6 @@
 import mysql.connector
 from tkinter import *
+from tkinter import messagebox
 from decouple import config
 
 def InserirDados():
@@ -8,6 +9,11 @@ def InserirDados():
     i = int(idade.get())
     n = str(Nome.get())    
 
+    MsgBox = messagebox.askquestion ('Salvar dados','Deseja salvar esses dados?',icon = 'question')
+
+    if MsgBox == 'yes':
+       janela.destroy()
+        
     cursor = myconnection.cursor()
     sql = "INSERT INTO logins(nome, idade) VALUE (%s, %s)"
     val = [
