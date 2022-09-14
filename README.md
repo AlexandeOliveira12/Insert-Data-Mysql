@@ -2,9 +2,6 @@
 
 ## INSIRA REGISTROS NO BANCO DE DADOS MYSQL USANDO INTERFACE GRAFICA COM A LIB DO TKINTER
 
-VERSÃO=2.0  
-DB's COMPATIVEIS = MYSQL
-
 Para baixar o repositório escreva no terminal(cmd):
 ````
 git clone https://github.com/AlexandeOliveira12/Searching-Records-Database
@@ -20,6 +17,16 @@ Tkinter;
 
 (Obs: Substitua as informações de conexão do servidor pelas suas!)
 
+# Política de segurança
+
+VERSÃO=2,0
+DB COMPATÍVEL = MYSQL
+
+## Como relatar uma 
+vulnerabilidade
+
+Está é uma versão de teste, 
+falhas serão comuns, para relatar uma vulnerabilidade faça um pull request
 
 ##
 
@@ -44,3 +51,17 @@ mysql;
 Tkinter;
 
 (Note: Replace the server connection information with your own!)
+
+# Security policy
+
+VERSION=2.0
+DB COMPATIBLE = MYSQL
+
+## How to report a
+vulnerability
+
+This is a trial version,
+failures will be common, to report a vulnerability make a pull request
+
+
+
