@@ -22,8 +22,7 @@ Tkinter;
 VERSÃO=2,0 - 
 DB COMPATÍVEL = MYSQL
 
-## Como relatar uma 
-vulnerabilidade
+## Como relatar uma vulnerabilidade
 
 Está é uma versão de teste, 
 falhas serão comuns, para relatar uma vulnerabilidade faça um pull request
@@ -54,8 +53,7 @@ Tkinter;
 VERSION=2.0 - 
 DB COMPATIBLE = MYSQL
 
-## How to report a
-vulnerability
+## How to report a vulnerability
 
 This is a trial version,
 failures will be common, to report a vulnerability make a pull request
