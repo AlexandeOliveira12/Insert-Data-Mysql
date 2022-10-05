@@ -19,7 +19,7 @@ Tkinter;
 
 # Política de segurança
 
-VERSÃO=2,0 - 
+VERSÃO=2,1 - 
 DB COMPATÍVEL = MYSQL
 
 ## Como relatar uma vulnerabilidade
@@ -50,7 +50,7 @@ Tkinter;
 
 # Security policy
 
-VERSION=2.0 - 
+VERSION=2.1 - 
 DB COMPATIBLE = MYSQL
 
 ## How to report a vulnerability
