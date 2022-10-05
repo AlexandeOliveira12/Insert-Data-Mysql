@@ -7,10 +7,12 @@ from decouple import config
 
 #Função de inserção de dados
 def InserirDados():
+    
+    #Registrando Login
     myconnection = mysql.connector.connect(host=config("localhost"), user='root', password=config("password"), database=config("database"))
      
-    i = int(idade.get())
-    n = str(Nome.get()) 
+    Idade = int(idade.get())
+    name = str(Nome.get())
 
     MsgBox = messagebox.askquestion ('Salvar dados','Deseja salvar esses dados?',icon = 'question')
 
@@ -20,7 +22,7 @@ def InserirDados():
     cursor = myconnection.cursor()
     sql = "INSERT INTO logins(nome, idade) VALUE (%s, %s)"
     val = [
-    (n, i)
+    (name, Idade)
     ]
     cursor.executemany(sql, val)
     myconnection.commit()
@@ -30,21 +32,22 @@ def InserirDados():
         cursor.close()
         myconnection.close()
         print("Conexao ao MySql foi encerrada")      
-        
-     
-      
-        
-def Janela2():
+
+    #Exibindo conta
     janelaConta = Tk()
-    janelaConta.geometry("240x150")
+    janelaConta.geometry("455x250")
     janelaConta.title("Conta")
     
-    i = int(idade.get())
-    n = str(Nome.get())
-    
-    Saudacao = Label(janelaConta, text="Seja bem vindo" + n + i)
+    Saudacao = Label(janelaConta, text=f"Seja bem vindo: {name}" )
     Saudacao.grid(column=0, row=0)
     
+    Text1 = Label(janelaConta, text="""Esta é uma versão de teste, erros serão corrigidos o mais rapido possivel, por favor, 
+                                       se achar algum bug, nos reporte no instagram: 
+                                       @xandin_robert""")
+    Text1.grid(column=0, row=1)
+    
+    
+#Janela de Login
 JanelaLogin = Tk()
 JanelaLogin.geometry("240x150")
 JanelaLogin.title("Login")
@@ -61,7 +64,7 @@ idade1.grid(column=0, row=2)
 idade = Entry(JanelaLogin, width=40)
 idade.grid(column=0, row=3)
 
-botao = Button(JanelaLogin, text="Inserir dados", command=lambda:[InserirDados(), Janela2()])
+botao = Button(JanelaLogin, text="Inserir dados", command=lambda:[InserirDados()])
 botao.grid(column=0, row=4)
 
 JanelaLogin.mainloop()        
