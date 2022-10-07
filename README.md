@@ -50,7 +50,7 @@ Tkinter;
 
 # Security policy
 
-VERSION=2.1 - 
+VERSION=2.5 - 
 DB COMPATIBLE = MYSQL
 
 ## How to report a vulnerability
