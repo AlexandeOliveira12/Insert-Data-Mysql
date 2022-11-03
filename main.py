@@ -1,22 +1,15 @@
-#Mysql
+#Banco de dados
 import mysql.connector
 
-#Tkinter
+#notificações e interface
+from win10toast import ToastNotifier
 from tkinter import *
 from tkinter import messagebox
 
-#Notificação
-from win10toast import ToastNotifier
-
-#Segurança
+#segurança
 from decouple import config
 
-#Busca
-import wikipedia
-
-    
-
-#Função de inserção de dados
+#Função de inserção de dados e segunda tela
 def InserirDados():
     
     #Registrando Login
@@ -25,40 +18,43 @@ def InserirDados():
     Idade = int(idade.get())
     name = str(Nome.get())
     
-
     MsgBox = messagebox.askquestion ('Salvar dados','Deseja salvar esses dados?',icon = 'question')
 
     if MsgBox == 'yes':
        JanelaLogin.destroy()
        
-       toaster = ToastNotifier()
-       
-       toaster.show_toast(
-           "Login Efetuado",
-           f"Seja bem vindo {name}!",
-           threaded=True,
-           icon_path=None,
-           duration=5
-       )
-        
     cursor = myconnection.cursor()
     sql = "INSERT INTO logins(nome, idade) VALUE (%s, %s)"
-    val = [
+    value = [
     (name, Idade)
     ]
-    cursor.executemany(sql, val)
+    cursor.executemany(sql, value)
     myconnection.commit()
     print(cursor.rowcount, "Registros inseridos")
 
     if myconnection.is_connected(): 
         cursor.close()
         myconnection.close()
-        print("Conexao ao MySql foi encerrada")   
+        print("Conexao ao MySql foi encerrada") 
+    
 
-    #Exibindo conta
+
+    # Inicializa #
+    toaster = ToastNotifier()
+
+    # Passa parâmetros e mostra a notificação #
+    toaster.show_toast(
+    "Notificação de Login", 
+    f"Seja bem vindo {name}", 
+    threaded=False, 
+    icon_path=None, 
+    duration=10 # 3 segundos
+ )             
+       
+    #Exibindo conta e cotações
     janelaConta = Tk()
     janelaConta.geometry("455x250")
-    janelaConta.title("Conta")
+    janelaConta.title("Cotação atual das moedas")
     
     Saudacao = Label(janelaConta, text=f"Seja bem vindo: {name}" )
     Saudacao.grid(column=0, row=0)
@@ -66,22 +62,8 @@ def InserirDados():
     Text1 = Label(janelaConta, text="")
     Text1.grid(column=0, row=1)
     
-    Text2 = Label(janelaConta, text="O que deseja buscar? (Obs: A busca será feita na wikipedia")
-    Text2.grid(column=0, row=2)
-    
-    TextEntry1 = Entry(janelaConta, width=40)
-    TextEntry1.grid(column=0, row=3)
-    
-    busca = (TextEntry1.get())
-    
-    result = wikipedia.summary(busca)
-    
-    TextResultado = Label(janelaConta, text="")
-    TextResultado.grid(column=0, row=5)
-    
-    
-    TextResultado["text"] = result
-    
+    janelaConta.mainloop()
+
     
 #Janela de Login
 JanelaLogin = Tk()
@@ -100,7 +82,7 @@ idade1.grid(column=0, row=2)
 idade = Entry(JanelaLogin, width=40)
 idade.grid(column=0, row=3)
 
-botao = Button(JanelaLogin, text="Inserir dados", command=lambda:[InserirDados()])
+botao = Button(JanelaLogin, text="Inserir dados", command=InserirDados)
 botao.grid(column=0, row=4)
 
 JanelaLogin.mainloop()        
