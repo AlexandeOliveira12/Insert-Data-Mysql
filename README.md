@@ -4,7 +4,7 @@
 
 Para baixar o repositório escreva no terminal(cmd):
 ````
-git clone https://github.com/AlexandeOliveira12/Searching-Records-Database
+git clone https://github.com/AlexandeOliveira12/Insert-Data-Mysql
 ````
 Para baixar os requirements escreva no terminal(cmd):
 ````
@@ -14,6 +14,8 @@ Dependencias necessarias para usar este recuros:
 Python;
 Mysql;
 Tkinter;
+Decouple;
+win10toast;
 
 (Obs: Substitua as informações de conexão do servidor pelas suas!)
 
@@ -35,7 +37,7 @@ falhas serão comuns, para relatar uma vulnerabilidade faça um pull request
 
 To download the repository write in the terminal(cmd):
 ````
-git clone https://github.com/AlexandeOliveira12/Searching-Records-Database
+git clone https://github.com/AlexandeOliveira12/Insert-Data-Mysql
 ````
 To download the requirements write in the terminal(cmd):
 ````
@@ -45,6 +47,9 @@ Dependencies needed to use this feature:
 Python;
 mysql;
 Tkinter;
+Decouple;
+win10toast;
+
 
 (Note: Replace the server connection information with your own!)
 
